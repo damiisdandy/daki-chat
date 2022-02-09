@@ -2,13 +2,7 @@ import icon from "./images/icon.jpeg";
 import "./App.scss";
 import * as firebase from "firebase/app";
 import { getAuth } from "firebase/auth";
-import {
-  collection,
-  getFirestore,
-  limit,
-  orderBy,
-  query,
-} from "firebase/firestore";
+import { collection, getFirestore, orderBy, query } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import Chat from "./components/chat";

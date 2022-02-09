@@ -1,4 +1,4 @@
-import { FormEventHandler, useEffect, useRef, useState } from "react";
+import { FormEventHandler, useEffect, useState } from "react";
 import { BiSend } from "react-icons/bi";
 import Message from "./message";
 import { Auth } from "firebase/auth";
