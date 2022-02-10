@@ -7,7 +7,9 @@ interface MessageProp {
   message: string;
   username: string;
   image: string;
-  mine: boolean;
-  isAdmin: boolean;
+  mine?: boolean;
+  isAdmin?: boolean;
   createdAt: any;
+  loading?: boolean;
+  error?: boolean;
 }

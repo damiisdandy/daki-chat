@@ -8,8 +8,9 @@ const Message = ({
   mine,
   isAdmin,
   createdAt,
+  loading,
 }: MessageProp) => {
-  const dateFormat = (date: string) => {
+  const dateFormat = (date: any) => {
     const isToday =
       dayjs(date).format("MM/DD/YYYY") === dayjs().format("MM/DD/YYYY");
     const withinWeek = dayjs().diff(dayjs(date), "d") <= 6;
@@ -30,8 +31,10 @@ const Message = ({
         <p>
           {!mine && isAdmin && <FaCrown />} {username}
         </p>
-        <div className="message-content">{message}</div>
-        <p className="date">{dateFormat(createdAt?.toDate())}</p>
+        <div className={`message-content ${loading && "loading"}`}>
+          {message}
+        </div>
+        <p className="date">{loading ? "sending..." : dateFormat(createdAt)}</p>
       </div>
     </div>
   );

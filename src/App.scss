@@ -1,6 +1,7 @@
 .App {
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   .Navbar {
     z-index: 20;
     padding: 2rem;
@@ -56,14 +57,14 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    height: calc(100vh - 18rem);
     width: 100%;
-    padding: 0 1rem;
-    padding-top: 9rem;
-    padding-bottom: 10rem;
-    margin-bottom: 10rem;
+    margin-top: 8rem;
+    overflow-y: scroll;
+    padding: 2rem;
     .message {
       display: flex;
-      align-items: start;
+      align-items: flex-start;
       gap: 1rem;
       &.mine {
         align-self: flex-end;
@@ -75,7 +76,7 @@
           align-items: flex-end;
           p {
             text-align: right;
-            justify-content: end;
+            justify-content: flex-end;
           }
         }
         .message-content {
@@ -131,6 +132,13 @@
         overflow: hidden;
         width: fit-content;
         box-shadow: 0 0.5rem 5rem rgba(0, 0, 0, 0.2);
+        &.loading {
+          opacity: 0.5;
+        }
+        &.error {
+          opacity: 0.5;
+          background-color: red;
+        }
       }
     }
   }
@@ -144,7 +152,7 @@
     padding: 0 1rem;
     width: 100%;
     .input {
-      width: 85%;
+      width: calc(100% - 6rem);
       height: 4.5rem;
       background-color: #232323;
       border-radius: 2rem;
